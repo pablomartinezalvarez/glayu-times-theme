@@ -1,0 +1,38 @@
+<% use Glayu.EEx %>
+<div class="masthead hidden-xs">
+    <div id="masthead-cap">
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="menu-toggle" type="button" href="#">
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                            Sections
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-center">
+                    <li><h2 class="branding"><a href="/"><%= @site.title %></a></h2></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><p><%= Date.now("%A, %B %-d, %Y") %></p></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="masthead-meta">
+        <div class="kicker-container">
+            <h3 class="kicker"><a href="<%= @page.category.parent.path %>"><%=@page.category.parent.name %></a></h3>
+        </div>
+        <h1><%= @page.category.name %></h1>
+    </div>
+    <%= if length(subcategories(@page.category.keys)) > 0 do %>
+    <nav id="mini-navigation">
+        <ul class="nav navbar-nav">
+            <%= for subcategory <- subcategories(@page.category.keys) do %>
+            <li><a href="<%= subcategory.path %>"><%= subcategory.name %></a></li>
+            <% end %>
+        </ul>
+    </nav>
+    <% end %>
+</div>

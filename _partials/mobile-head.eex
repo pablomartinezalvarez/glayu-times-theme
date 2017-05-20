@@ -1,0 +1,8 @@
+<div class="mobile-head visible-xs-block">
+    <nav class="navbar ">
+        <a class="menu-toggle" type="button" href="#">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </a>
+        <h2 class="branding"><%= @site.title %></h2>
+    </nav>
+</div>

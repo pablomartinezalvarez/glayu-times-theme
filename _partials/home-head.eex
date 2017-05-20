@@ -1,0 +1,28 @@
+<% use Glayu.EEx %>
+<div class="masthead hidden-xs">
+    <div id="masthead-cap">
+        <nav class="navbar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="menu-toggle" type="button" href="#">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        Sections
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><p><%= Date.now("%A, %B %-d, %Y") %></p></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="masthead-meta">
+        <h2 class="branding"><a href="#"><%= @site.title %></a></h2>
+    </div>
+    <nav id="mini-navigation">
+        <ul class="nav nav-justified">
+            <%= for category <- categories() do %>
+            <li><a href="<%= category.path %>"><%= category.name %></a></li>
+            <% end %>
+        </ul>
+    </nav>
+</div>

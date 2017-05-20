@@ -1,0 +1,8 @@
+<% use Glayu.EEx %>
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <%= for category <- categories() do %>
+        <li><a href="<%= category.path %>"><%= category.name %></a></li>
+        <% end %>
+    </ul>
+</div>
